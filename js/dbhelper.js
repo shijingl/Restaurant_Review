@@ -9,6 +9,10 @@ class DBHelper {
    */
   static get DATABASE_URL() {
     const port = 8080 // Change this to your server port
+
+    if(isHosted){
+      return 'https://shijingl.github.io/Restaurant_Review/data/restaurants.json'
+    }
     return `http://localhost:${port}/data/restaurants.json`;
   }
 
@@ -169,3 +173,4 @@ class DBHelper {
   
 }
 
+let isHosted = (window.location.hostname === "shijingl.github.io") ? 'true' : '' ;
