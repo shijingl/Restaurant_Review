@@ -1,8 +1,13 @@
 # Restuarant Reviews
 ---
 ## Project Overview
-This restaurant review project refactors a static website into a website with responsiveness, accessibility and offline use. 
-#### Live Demo: [Click Here](https://shijingl.github.io/Restaurant_Review/)
+This restaurant review is a fully-responsive, mobile-friendly web application that some offline use. Please [Click Here](https://shijingl.github.io/Restaurant_Review/) for a live demo. 
+
+--What's special?
+-1. fully responsive
+-2. offline use
+
+--
 
 ## How to Run Locally?
 Using Python HTTP server In the project folder, start up a simple HTTP server to serve up the site files on your local computer.
