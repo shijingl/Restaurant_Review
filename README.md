@@ -5,9 +5,16 @@ This restaurant review is a fully-responsive, mobile-friendly web application th
 
 --What's special?
 -1. fully responsive
--2. offline use
+-2. accessibility
+-3. offline use
 
---
+--Technical
+-1.assets
+-2.How it's implemented
+--1) get map on screen through mapbox API
+--2) convert the site to responsive design
+--3) implement accessibility features in the site HTML
+--4) add service worker script
 
 ## How to Run Locally?
 Using Python HTTP server In the project folder, start up a simple HTTP server to serve up the site files on your local computer.
