@@ -10,6 +10,21 @@ This restaurant review is a fully-responsive, mobile-friendly web application th
 
 --Technical
 -1.assets
+-JS
+--dbhelper.js
+--indexController.js
+--main.js
+--restaurant_info.js
+--sw.js
+-HTML
+--index.html
+--restaurant.html
+-CSS
+--style.css
+-DATA
+--restaurants.json
+
+
 -2.How it's implemented
 --1) get map on screen through mapbox API
 --2) convert the site to responsive design
