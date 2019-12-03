@@ -12,6 +12,8 @@ This restaurant review is a fully-responsive, mobile-friendly web application th
 -1.assets
 -JS
 --dbhelper.js
+callback, XHR (implement asynchronously). 
+
 --indexController.js
 --main.js
 --restaurant_info.js
