@@ -1,7 +1,7 @@
 # Restuarant Reviews
 ---
 ## Project Overview
-This restaurant review is a fully-responsive, mobile-friendly web application that some offline use. Please [Click Here](https://shijingl.github.io/Restaurant_Review/) for a live demo. 
+This restaurant review is a fully-responsive, accessible, mobile-friendly web application that some offline use. Please [Click Here](https://shijingl.github.io/Restaurant_Review/) for a live demo. 
 
 --What's special?
 -1. fully responsive
