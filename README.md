@@ -17,10 +17,10 @@ This restaurant review is a fully-responsive, accessible, mobile-friendly web ap
 `static fetchRestaurantByCuisineAndNeighborhood(cuisine, neighborhood, callback)` </br>
 `static fetchNeighborhoods(callback)` </br>
 `static fetchCuisines(callback)` </br>
-
-##### `main.js`: a wrapper for dbhelper.js that directly interact with index.html file 
-##### `restaurant_info.js`: a wrapper for dbhelper.js that directly interact with restaurant_info.js
-
+##### `main.js`: a wrapper for dbhelper.js that directly interact with the event listeners in index.html 
+##### `restaurant_info.js`: a wrapper for dbhelper.js that directly interact with the event listeners in restaurant.html
+##### `sw.js`: the script that installs, activates service worker, and manipulates cache through cache.put, cache.addALL, cache.match, cache.delete. 
+##### `indexController.js`: 
 
 
 --indexController.js
