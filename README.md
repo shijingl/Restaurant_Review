@@ -30,7 +30,7 @@ This restaurant review is a fully-responsive, accessible, mobile-friendly web ap
 
 ## Accessibility
 All content-related images in this project include appropriate alternate text that clearly describes the content of the image. </br>
-Focus is appropriately managed allowing users to noticeably tab through each of the important elements of the page. Modal or interstitial windows appropriately lock focus. </br>
+Focus in this project is appropriately managed allowing users to noticeably tab through each of the important elements of the page. Modal or interstitial windows appropriately lock focus. </br>
 Elements on the page use the appropriate semantic elements. For those elements in which a semantic element is not available, appropriate ARIA roles are defined. </br>
 `<select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-label="Select Cuisines" aria-describedby="cuisines-select-help">` </br>
 `<select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-label="Select Neighborhoods" aria-describedby="neighborhoods-select-help">` </br>
