@@ -55,5 +55,6 @@ Using Python HTTP server In the project folder, start up a simple HTTP server to
 2. For Python 3.x, you can use python -m http.server 8080
 With your server running, visit the site: http://localhost:8080
 
-## Leaflet.js and Mapbox
-This repository uses leafletjs with Mapbox. You need to replace mapboxToken: with a token from Mapbox-Access token in main.js and restaurant_info.js. Mapbox is free to use, and does not require any payment information.
+## Third Party Library Used
+1. `Leftlet.js` (https://leafletjs.com): Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. 
+2. `Mapbox` (https://www.mapbox.com): An open source mapping platform for custom designed maps. Mapbox's APIs and SDKs are the building blocks to integrate location into any mobile or web app.
