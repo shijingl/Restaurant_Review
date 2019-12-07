@@ -22,11 +22,11 @@ This restaurant review is a fully-responsive, accessible, mobile-friendly web ap
 ##### `sw.js`: the script that installs, activates service worker, and manipulates cache through cache.put, cache.addALL, cache.match, cache.delete. 
 ##### `indexController.js`: a wrapper that register sw.js file and control service worker's status through reg.installing and reg.waiting. 
 
+#### 3. CSS File
+##### `style.css`: the css file for this project. 
 
--CSS
---style.css
--DATA
---restaurants.json
+#### 4. DATA
+##### `restaurants.json`: the raw data file for this project in JSON format.  
 
 
 -2.How it's implemented
