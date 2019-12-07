@@ -21,6 +21,7 @@ callback, XHR (implement asynchronously).
 
 --main.js
 --restaurant_info.js
+
 --sw.js
 -cache.put
 -cahce.addALL
@@ -29,6 +30,9 @@ callback, XHR (implement asynchronously).
 -activate
 -caches.open(staticCacheName)
 -caches.delete
+-worker.state
+-statechange
+-serviceWorker.controller
 
 -HTML
 --index.html
