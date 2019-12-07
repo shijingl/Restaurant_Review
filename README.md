@@ -1,7 +1,7 @@
 # Restuarant Reviews
 ---
 ## Project Overview
-This restaurant review is a fully-responsive, accessible, mobile-friendly web application that some offline use. Please [Click Here](https://shijingl.github.io/Restaurant_Review/) for a live demo. 
+This restaurant review is a fully-responsive, accessible, mobile-friendly web application that support some offline use. Please [Click Here](https://shijingl.github.io/Restaurant_Review/) for a live demo. 
 
 ## Project Assets
 #### 1. HTML File
@@ -28,12 +28,14 @@ This restaurant review is a fully-responsive, accessible, mobile-friendly web ap
 #### 4. DATA
 ##### `restaurants.json`: the raw data file for this project in JSON format.  
 
+## Accessibility
+All content-related images in this project include appropriate alternate text that clearly describes the content of the image. </br>
+Focus is appropriately managed allowing users to noticeably tab through each of the important elements of the page. Modal or interstitial windows appropriately lock focus. </br>
+Elements on the page use the appropriate semantic elements. For those elements in which a semantic element is not available, appropriate ARIA roles are defined. </br>
+`<select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-label="Select Cuisines" aria-describedby="cuisines-select-help">` </br>
+`<select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-label="Select Neighborhoods" aria-describedby="neighborhoods-select-help">` </br>
 
--2.How it's implemented
---1) get map on screen through mapbox API
---2) convert the site to responsive design
---3) implement accessibility features in the site HTML
---4) add service worker script
+## Offline Use
 
 ## How to Run Locally?
 Using Python HTTP server In the project folder, start up a simple HTTP server to serve up the site files on your local computer.
