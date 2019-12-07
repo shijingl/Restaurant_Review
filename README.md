@@ -24,6 +24,9 @@ callback, XHR (implement asynchronously).
 -cahce.addALL
 -caches.match
 -install
+-activate
+-caches.open(staticCacheName)
+-caches.activate
 
 -HTML
 --index.html
