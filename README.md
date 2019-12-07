@@ -6,8 +6,14 @@ This restaurant review is a fully-responsive, accessible, mobile-friendly web ap
 ## Assets
 #### 1. JS File 
 ##### `dbhelper.js`
-dbhelper.js includes several functions that asynchronously load data from restaurants.json file using XHR objects and callback. Functions included are: </br>
-`static fetchRestaurants(callback)`
+dbhelper.js includes several functions that asynchronously load data from restaurants.json file through XHR objects and callback. Functions are: </br>
+`static fetchRestaurants(callback)` </br>
+`static fetchRestaurantById(id, callback)` </br>
+`static fetchRestaurantByCuisine(cuisine, callback)` </br>
+`static fetchRestaurantByNeighborhood(neighborhood, callback)` </br>
+`static fetchRestaurantByCuisineAndNeighborhood(cuisine, neighborhood, callback)` </br>
+`static fetchNeighborhoods(callback)` </br>
+`static fetchCuisines(callback)` </br>
 
 --Technical
 -1.assets
