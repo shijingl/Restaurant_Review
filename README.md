@@ -18,14 +18,15 @@ This restaurant review is a fully-responsive, accessible, mobile-friendly web ap
 `static fetchNeighborhoods(callback)` </br>
 `static fetchCuisines(callback)` </br>
 
+##### `main.js`: a wrapper for dbhelper.js that directly interact with index.html file 
+##### `restaurant_info.js`: a wrapper for dbhelper.js that directly interact with restaurant_info.js
+
+
 
 --indexController.js
 -navigator.serviceworker.register('sw.js')
 -reg.waiting
 -reg.installing
-
---main.js
---restaurant_info.js
 
 --sw.js
 -cache.put
