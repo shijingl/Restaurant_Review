@@ -20,29 +20,9 @@ This restaurant review is a fully-responsive, accessible, mobile-friendly web ap
 ##### `main.js`: a wrapper for dbhelper.js that directly interact with the event listeners in index.html 
 ##### `restaurant_info.js`: a wrapper for dbhelper.js that directly interact with the event listeners in restaurant.html
 ##### `sw.js`: the script that installs, activates service worker, and manipulates cache through cache.put, cache.addALL, cache.match, cache.delete. 
-##### `indexController.js`: 
+##### `indexController.js`: a wrapper that register sw.js file and control service worker's status through reg.installing and reg.waiting. 
 
 
---indexController.js
--navigator.serviceworker.register('sw.js')
--reg.waiting
--reg.installing
-
---sw.js
--cache.put
--cahce.addALL
--caches.match
--install
--activate
--caches.open(staticCacheName)
--caches.delete
--worker.state
--statechange
--serviceWorker.controller
-
--HTML
---index.html
---restaurant.html
 -CSS
 --style.css
 -DATA
