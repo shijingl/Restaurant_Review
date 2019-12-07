@@ -3,10 +3,11 @@
 ## Project Overview
 This restaurant review is a fully-responsive, accessible, mobile-friendly web application that some offline use. Please [Click Here](https://shijingl.github.io/Restaurant_Review/) for a live demo. 
 
---What's special?
--1. fully responsive
--2. accessibility
--3. offline use
+## Assets
+#### 1. JS File 
+##### `dbhelper.js`
+dbhelper.js includes several functions that asynchronously load data from restaurants.json file using XHR objects and callback. Functions included are: </br>
+`static fetchRestaurants(callback)`
 
 --Technical
 -1.assets
