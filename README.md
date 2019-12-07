@@ -36,6 +36,8 @@ Elements on the page use the appropriate semantic elements. For those elements i
 `<select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-label="Select Neighborhoods" aria-describedby="neighborhoods-select-help">` </br>
 
 ## Offline Use
+In Lie-Fi or even Offline environment, user can still visit the page he/she has visited before. </br>
+If the page was not cached before, the user will be returned a page: "You seems to be offline, and we didn't find any old cache for the URL."
 
 ## How to Run Locally?
 Using Python HTTP server In the project folder, start up a simple HTTP server to serve up the site files on your local computer.
