@@ -4,9 +4,12 @@
 This restaurant review is a fully-responsive, accessible, mobile-friendly web application that some offline use. Please [Click Here](https://shijingl.github.io/Restaurant_Review/) for a live demo. 
 
 ## Project Assets
-#### 1. JS File 
-##### `dbhelper.js`
-dbhelper.js includes several functions that asynchronously load data from restaurants.json file through XHR objects and callback. Functions are: </br>
+#### 1. HTML File
+##### `index.html`
+##### restaurant.html
+
+#### 2. JS File 
+##### `dbhelper.js`: asynchronously load data from restaurants.json file through XHR objects and callback. Functions included are: </br>
 `static fetchRestaurants(callback)` </br>
 `static fetchRestaurantById(id, callback)` </br>
 `static fetchRestaurantByCuisine(cuisine, callback)` </br>
@@ -15,11 +18,6 @@ dbhelper.js includes several functions that asynchronously load data from restau
 `static fetchNeighborhoods(callback)` </br>
 `static fetchCuisines(callback)` </br>
 
---Technical
--1.assets
--JS
---dbhelper.js
-callback, XHR (implement asynchronously). 
 
 --indexController.js
 -navigator.serviceworker.register('sw.js')
