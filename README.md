@@ -15,9 +15,16 @@ This restaurant review is a fully-responsive, mobile-friendly web application th
 callback, XHR (implement asynchronously). 
 
 --indexController.js
+-navigator.serviceworker.register('sw.js')
+
 --main.js
 --restaurant_info.js
 --sw.js
+-cache.put
+-cahce.addALL
+-caches.match
+-install
+
 -HTML
 --index.html
 --restaurant.html
