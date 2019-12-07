@@ -16,6 +16,8 @@ callback, XHR (implement asynchronously).
 
 --indexController.js
 -navigator.serviceworker.register('sw.js')
+-reg.waiting
+-reg.installing
 
 --main.js
 --restaurant_info.js
@@ -26,7 +28,7 @@ callback, XHR (implement asynchronously).
 -install
 -activate
 -caches.open(staticCacheName)
--caches.activate
+-caches.delete
 
 -HTML
 --index.html
