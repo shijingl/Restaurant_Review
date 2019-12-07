@@ -5,8 +5,8 @@ This restaurant review is a fully-responsive, accessible, mobile-friendly web ap
 
 ## Project Assets
 #### 1. HTML File
-##### `index.html`
-##### restaurant.html
+##### `index.html`: the html file for the main page. 
+##### `restaurant.html`: the html file for the restaurant detail page.
 
 #### 2. JS File 
 ##### `dbhelper.js`: asynchronously load data from restaurants.json file through XHR objects and callback. Functions included are: </br>
