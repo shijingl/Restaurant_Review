@@ -8,7 +8,7 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    const port = 8080 // Change this to your server port
+    const port = 8081 // Change this to your server port
 
     if(isHosted){
       return 'https://shijingl.github.io/Restaurant_Review/data/restaurants.json'

@@ -8,7 +8,7 @@ var markers = []
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
-  initMap(); // added 
+  initMap(); 
   fetchNeighborhoods();
   fetchCuisines();
 });
@@ -22,6 +22,7 @@ fetchNeighborhoods = () => {
       console.error(error);
     } else {
       self.neighborhoods = neighborhoods;
+      // console.log("neighborhoods here!!", self.neighborhoods);
       fillNeighborhoodsHTML();
     }
   });
@@ -32,12 +33,14 @@ fetchNeighborhoods = () => {
  */
 fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   const select = document.getElementById('neighborhoods-select');
+  // console.log("neighborhoods select!", neighborhoods);
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
     option.value = neighborhood;
     select.append(option);
   });
+  console.log("neighborhoods here!", select);
 }
 
 /**
@@ -49,6 +52,7 @@ fetchCuisines = () => {
       console.error(error);
     } else {
       self.cuisines = cuisines;
+      // console.log("cuisines here!!", self.cuisines)
       fillCuisinesHTML();
     }
   });
@@ -59,13 +63,14 @@ fetchCuisines = () => {
  */
 fillCuisinesHTML = (cuisines = self.cuisines) => {
   const select = document.getElementById('cuisines-select');
-
+  // console.log("cuisines select!", cuisines)
   cuisines.forEach(cuisine => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
     option.value = cuisine;
     select.append(option);
   });
+  // console.log("cuisines select!", select)
 }
 
 /**
@@ -88,18 +93,6 @@ initMap = () => {
 
   updateRestaurants();
 }
-/* window.initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
-} */
 
 /**
  * Update page and map for current restaurants.
