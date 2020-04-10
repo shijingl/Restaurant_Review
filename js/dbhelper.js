@@ -34,7 +34,7 @@ class DBHelper {
     };
     xhr.send();
   }
-  
+
   /**
    * Fetch a restaurant by its ID.
    */
@@ -167,9 +167,12 @@ class DBHelper {
   /**
    * Restaurant image URL.
    */
+
+   /*
   static imageUrlForRestaurant(restaurant) {
     return (`./img/${restaurant.photograph}`);
   }
+  */
 
   /**
    * Map marker for a restaurant.
