@@ -41,9 +41,9 @@ If the page was not cached before, the user will be returned a page: "You seems 
 
 ## How to Run Locally?
 Using Python HTTP server In the project folder, start up a simple HTTP server to serve up the site files on your local computer.
-1. If you have Python 2.x, spin up the server with python -m SimpleHTTPServer 8080
-2. For Python 3.x, you can use python3 -m http.server 8080
-With your server running, visit the site: http://localhost:8080
+1. If you have Python 2.x, spin up the server with python -m SimpleHTTPServer 8081
+2. For Python 3.x, you can use python3 -m http.server 8081
+With your server running, visit the site: http://localhost:8081
 
 ## Library/API Used
 1. `Leftlet.js` (https://leafletjs.com): Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. 
