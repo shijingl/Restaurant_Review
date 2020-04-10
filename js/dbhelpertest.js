@@ -8,3 +8,5 @@ class DBHelperTest {
         return `http://localhost:${port}/data/restaurants.json`;
       }
 }
+
+// let isHosted = (window.location.hostname === "shijingl.github.io") ? 'true' : '' ;

@@ -3,7 +3,6 @@ let restaurants,
   cuisines
 var newMap
 var markers = []
-const select = document.getElementById('neighborhoods-select');
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
@@ -12,10 +11,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); 
   fetchNeighborhoodsTest();
   // fetchNeighborhoods();
-  fetchCuisines();
+  fetchCuisinesTest();
+  // fetchCuisines();
 });
 
-
+/**
+ * Fetch all neighborhoods and set their HTML.
+ */
 fetchNeighborhoodsTest = () => {
   const fetchNeighborhoods = fetch(DBHelperTest.DATABASE_URL_Test)
   fetchNeighborhoods.then(response => {
@@ -29,6 +31,7 @@ fetchNeighborhoodsTest = () => {
 }
 
 fillNeighborhoodsHTML = (neighborhoods) => {
+  const select = document.getElementById('neighborhoods-select');
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
@@ -37,10 +40,6 @@ fillNeighborhoodsHTML = (neighborhoods) => {
   });
 }
 
-
-/**
- * Fetch all neighborhoods and set their HTML.
- */
 /*
 fetchNeighborhoods = () => {
   DBHelper.fetchNeighborhoods((error, neighborhoods) => {
@@ -67,9 +66,33 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   });
 }
 */
+
 /**
  * Fetch all cuisines and set their HTML.
  */
+fetchCuisinesTest = () => {
+  const fetchCuisines = fetch(DBHelperTest.DATABASE_URL_Test);
+  fetchCuisines.then(response => {
+    return response.json();
+  }).then(cuisines => {
+      const restaurants = cuisines.restaurants;
+      const all_cuisines = restaurants.map((v, i) => restaurants[i].cuisine_type);
+      const uniqueCuisines = all_cuisines.filter((v, i) => all_cuisines.indexOf(v) == i);
+      fillCuisinesHTML(uniqueCuisines);
+  });
+}
+
+fillCuisinesHTML = (cuisines) => {
+  const select = document.getElementById('cuisines-select');
+  cuisines.forEach(cuisine => {
+    const option = document.createElement('option');
+    option.innerHTML = cuisine;
+    option.value = cuisine;
+    select.append(option);
+  });
+}
+
+/*
 fetchCuisines = () => {
   DBHelper.fetchCuisines((error, cuisines) => {
     if (error) { // Got an error!
@@ -80,10 +103,11 @@ fetchCuisines = () => {
     }
   });
 }
-
+*/
 /**
  * Set cuisines HTML.
  */
+/*
 fillCuisinesHTML = (cuisines = self.cuisines) => {
   const select = document.getElementById('cuisines-select');
   cuisines.forEach(cuisine => {
@@ -93,7 +117,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     select.append(option);
   });
 }
-
+*/
 /**
  * Initialize leaflet map, called from HTML.
  */
