@@ -2,7 +2,7 @@ class DBHelperTest {
     static get DATABASE_URL_Test() {
         const port = 8081 // Change this to your server port
     
-        if(isHosted){
+        if(isHosted_test){
           return 'https://shijingl.github.io/Restaurant_Review/data/restaurants.json'
         }
         return `http://localhost:${port}/data/restaurants.json`;
@@ -20,4 +20,4 @@ class DBHelperTest {
     } 
 }
 
-// let isHosted = (window.location.hostname === "shijingl.github.io") ? 'true' : '' ;
+let isHosted_test = (window.location.hostname === "shijingl.github.io") ? 'true' : '' ;

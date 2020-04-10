@@ -40,33 +40,6 @@ fillNeighborhoodsHTML = (neighborhoods) => {
   });
 }
 
-/*
-fetchNeighborhoods = () => {
-  DBHelper.fetchNeighborhoods((error, neighborhoods) => {
-    if (error) { // Got an error
-      console.error(error);
-    } else {
-      self.neighborhoods = neighborhoods;
-      fillNeighborhoodsHTML();
-    }
-  });
-}
-*/
-/**
- * Set neighborhoods HTML.
- */
-/*
-fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
-  const select = document.getElementById('neighborhoods-select');
-  neighborhoods.forEach(neighborhood => {
-    const option = document.createElement('option');
-    option.innerHTML = neighborhood;
-    option.value = neighborhood;
-    select.append(option);
-  });
-}
-*/
-
 /**
  * Fetch all cuisines and set their HTML.
  */
@@ -92,32 +65,6 @@ fillCuisinesHTML = (cuisines) => {
   });
 }
 
-/*
-fetchCuisines = () => {
-  DBHelper.fetchCuisines((error, cuisines) => {
-    if (error) { // Got an error!
-      console.error(error);
-    } else {
-      self.cuisines = cuisines;
-      fillCuisinesHTML();
-    }
-  });
-}
-*/
-/**
- * Set cuisines HTML.
- */
-/*
-fillCuisinesHTML = (cuisines = self.cuisines) => {
-  const select = document.getElementById('cuisines-select');
-  cuisines.forEach(cuisine => {
-    const option = document.createElement('option');
-    option.innerHTML = cuisine;
-    option.value = cuisine;
-    select.append(option);
-  });
-}
-*/
 /**
  * Initialize leaflet map, called from HTML.
  */
@@ -152,14 +99,21 @@ updateRestaurants = () => {
   const cuisine = cSelect[cIndex].value;
   const neighborhood = nSelect[nIndex].value;
 
-  DBHelper.fetchRestaurantByCuisineAndNeighborhood(cuisine, neighborhood, (error, restaurants) => {
-    if (error) { // Got an error!
-      console.error(error);
-    } else {
-      resetRestaurants(restaurants);
+  const fetchByCuisinesAndNeighborHood = fetch(DBHelperTest.DATABASE_URL_Test);
+  fetchByCuisinesAndNeighborHood.then(response => {
+    return response.json();
+  }).then(cuisines => {
+      // const restaurants = cuisines.restaurants;
+      let results = cuisines.restaurants;
+      if (cuisine != 'all') { // filter by cuisine
+        results = results.filter(r => r.cuisine_type == cuisine);
+      }
+      if (neighborhood != 'all') { // filter by neighborhood
+        results = results.filter(r => r.neighborhood == neighborhood);
+      }
+      resetRestaurants(results);
       fillRestaurantsHTML();
-    }
-  })
+  });
 }
 
 /**
@@ -216,7 +170,7 @@ createRestaurantHTML = (restaurant) => {
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
-  more.href = DBHelper.urlForRestaurant(restaurant);
+  more.href = `./restaurant.html?id=${restaurant.id}`;
   li.append(more)
 
   return li

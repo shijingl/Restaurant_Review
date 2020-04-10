@@ -34,7 +34,7 @@ class DBHelper {
     };
     xhr.send();
   }
-
+  
   /**
    * Fetch a restaurant by its ID.
    */
@@ -57,6 +57,7 @@ class DBHelper {
   /**
    * Fetch restaurants by a cuisine type with proper error handling.
    */
+  /*
   static fetchRestaurantByCuisine(cuisine, callback) {
     // Fetch all restaurants  with proper error handling
     DBHelper.fetchRestaurants((error, restaurants) => {
@@ -69,10 +70,12 @@ class DBHelper {
       }
     });
   }
+  */
 
   /**
    * Fetch restaurants by a neighborhood with proper error handling.
    */
+  /*
   static fetchRestaurantByNeighborhood(neighborhood, callback) {
     // Fetch all restaurants
     DBHelper.fetchRestaurants((error, restaurants) => {
@@ -85,10 +88,13 @@ class DBHelper {
       }
     });
   }
+  */
 
   /**
    * Fetch restaurants by a cuisine and a neighborhood with proper error handling.
    */
+
+  /*
   static fetchRestaurantByCuisineAndNeighborhood(cuisine, neighborhood, callback) {
     // Fetch all restaurants
     DBHelper.fetchRestaurants((error, restaurants) => {
@@ -106,10 +112,13 @@ class DBHelper {
       }
     });
   }
+  */
+
 
   /**
    * Fetch all neighborhoods with proper error handling.
    */
+  /*
   static fetchNeighborhoods(callback) {
     // Fetch all restaurants
     DBHelper.fetchRestaurants((error, restaurants) => {
@@ -118,20 +127,18 @@ class DBHelper {
       } else {
         // Get all neighborhoods from all restaurants
         const neighborhoods = restaurants.map((v, i) => restaurants[i].neighborhood)
-        // console.log(restaurants);
-        // console.log(neighborhoods);
         // Remove duplicates from neighborhoods
         const uniqueNeighborhoods = neighborhoods.filter((v, i) => neighborhoods.indexOf(v) == i)
-        // console.log(uniqueNeighborhoods);
-
         callback(null, uniqueNeighborhoods);
       }
     });
   }
+  */
 
   /**
    * Fetch all cuisines with proper error handling.
    */
+  /*
   static fetchCuisines(callback) {
     // Fetch all restaurants
     DBHelper.fetchRestaurants((error, restaurants) => {
@@ -146,13 +153,16 @@ class DBHelper {
       }
     });
   }
+  */
 
   /**
    * Restaurant page URL.
    */
+  /*
   static urlForRestaurant(restaurant) {
     return `./restaurant.html?id=${restaurant.id}`;
   }
+  */
 
   /**
    * Restaurant image URL.
