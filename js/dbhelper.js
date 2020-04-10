@@ -118,8 +118,12 @@ class DBHelper {
       } else {
         // Get all neighborhoods from all restaurants
         const neighborhoods = restaurants.map((v, i) => restaurants[i].neighborhood)
+        // console.log(restaurants);
+        // console.log(neighborhoods);
         // Remove duplicates from neighborhoods
         const uniqueNeighborhoods = neighborhoods.filter((v, i) => neighborhoods.indexOf(v) == i)
+        // console.log(uniqueNeighborhoods);
+
         callback(null, uniqueNeighborhoods);
       }
     });

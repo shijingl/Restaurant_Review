@@ -15,27 +15,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
   fetchCuisines();
 });
 
+
 fetchNeighborhoodsTest = () => {
   const fetchNeighborhoods = fetch(DBHelperTest.DATABASE_URL_Test)
   fetchNeighborhoods.then(response => {
     return response.json();
   }).then(neighborhoods => {
-    // const names = neighborhoods.restaurants.map(restaurant => restaurant.name).join('\n');
-    // console.log(names)
-    // self.neighborhoods = neighborhoods;
-    const restaurants = neighborhoods.restaurants
-    fillNeighborhoodsHTML(restaurants);
+    const restaurants = neighborhoods.restaurants;
+    const all_neighborhoods = restaurants.map((v, i) => restaurants[i].neighborhood)
+    const uniqueNeighborhoods = all_neighborhoods.filter((v, i) => all_neighborhoods.indexOf(v) == i)
+    fillNeighborhoodsHTML(uniqueNeighborhoods);
   });
 }
 
-fillNeighborhoodsHTML = (restaurants) => {
-  restaurants.forEach(restaurant => {
+fillNeighborhoodsHTML = (neighborhoods) => {
+  neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
-    option.innerHTML = restaurant;
-    option.value = restaurant;
+    option.innerHTML = neighborhood;
+    option.value = neighborhood;
     select.append(option);
   });
 }
+
 
 /**
  * Fetch all neighborhoods and set their HTML.
@@ -52,7 +53,6 @@ fetchNeighborhoods = () => {
   });
 }
 */
-
 /**
  * Set neighborhoods HTML.
  */
