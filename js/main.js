@@ -3,46 +3,70 @@ let restaurants,
   cuisines
 var newMap
 var markers = []
+const select = document.getElementById('neighborhoods-select');
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); 
-  fetchNeighborhoods();
+  fetchNeighborhoodsTest();
+  // fetchNeighborhoods();
   fetchCuisines();
 });
+
+fetchNeighborhoodsTest = () => {
+  const fetchNeighborhoods = fetch(DBHelperTest.DATABASE_URL_Test)
+  fetchNeighborhoods.then(response => {
+    return response.json();
+  }).then(neighborhoods => {
+    // const names = neighborhoods.restaurants.map(restaurant => restaurant.name).join('\n');
+    // console.log(names)
+    // self.neighborhoods = neighborhoods;
+    const restaurants = neighborhoods.restaurants
+    fillNeighborhoodsHTML(restaurants);
+  });
+}
+
+fillNeighborhoodsHTML = (restaurants) => {
+  restaurants.forEach(restaurant => {
+    const option = document.createElement('option');
+    option.innerHTML = restaurant;
+    option.value = restaurant;
+    select.append(option);
+  });
+}
 
 /**
  * Fetch all neighborhoods and set their HTML.
  */
+/*
 fetchNeighborhoods = () => {
   DBHelper.fetchNeighborhoods((error, neighborhoods) => {
     if (error) { // Got an error
       console.error(error);
     } else {
       self.neighborhoods = neighborhoods;
-      // console.log("neighborhoods here!!", self.neighborhoods);
       fillNeighborhoodsHTML();
     }
   });
 }
+*/
 
 /**
  * Set neighborhoods HTML.
  */
+/*
 fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   const select = document.getElementById('neighborhoods-select');
-  // console.log("neighborhoods select!", neighborhoods);
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
     option.value = neighborhood;
     select.append(option);
   });
-  console.log("neighborhoods here!", select);
 }
-
+*/
 /**
  * Fetch all cuisines and set their HTML.
  */
@@ -52,7 +76,6 @@ fetchCuisines = () => {
       console.error(error);
     } else {
       self.cuisines = cuisines;
-      // console.log("cuisines here!!", self.cuisines)
       fillCuisinesHTML();
     }
   });
@@ -63,14 +86,12 @@ fetchCuisines = () => {
  */
 fillCuisinesHTML = (cuisines = self.cuisines) => {
   const select = document.getElementById('cuisines-select');
-  // console.log("cuisines select!", cuisines)
   cuisines.forEach(cuisine => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
     option.value = cuisine;
     select.append(option);
   });
-  // console.log("cuisines select!", select)
 }
 
 /**
@@ -192,14 +213,5 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 } 
-/* addMarkersToMap = (restaurants = self.restaurants) => {
-  restaurants.forEach(restaurant => {
-    // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
-    google.maps.event.addListener(marker, 'click', () => {
-      window.location.href = marker.url
-    });
-    self.markers.push(marker);
-  });
-} */
+
 
