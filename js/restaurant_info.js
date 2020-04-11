@@ -62,28 +62,7 @@ fetchRestaurantFromURL = (callback) => {
       }
       fillRestaurantHTML();
       callback(null, restaurant)
-      /*
-      if (restaurant) { // Got the restaurant
-        callback(null, restaurant);
-      } else { // Restaurant does not exist in the database
-        callback('Restaurant does not exist', null);
-      }
-      */
-      // const all_neighborhoods = restaurants.map((v, i) => restaurants[i].neighborhood)
-      // const uniqueNeighborhoods = all_neighborhoods.filter((v, i) => all_neighborhoods.indexOf(v) == i)
-      // fillNeighborhoodsHTML(uniqueNeighborhoods);
     });
-    /*
-    DBHelper.fetchRestaurantById(id, (error, restaurant) => {
-      self.restaurant = restaurant;
-      if (!restaurant) {
-        console.error(error);
-        return;
-      }
-      fillRestaurantHTML();
-      callback(null, restaurant)
-    });
-    */
   }
 }
 
