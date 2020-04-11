@@ -9,14 +9,7 @@ This restaurant review is a fully-responsive, accessible, mobile-friendly web ap
 ##### `restaurant.html`: the html file for the restaurant detail page.
 
 #### 2. JS File 
-##### `dbhelper.js`: asynchronously load data from restaurants.json file through XHR objects and callback. Functions included are: </br>
-`static fetchRestaurants(callback)` </br>
-`static fetchRestaurantById(id, callback)` </br>
-`static fetchRestaurantByCuisine(cuisine, callback)` </br>
-`static fetchRestaurantByNeighborhood(neighborhood, callback)` </br>
-`static fetchRestaurantByCuisineAndNeighborhood(cuisine, neighborhood, callback)` </br>
-`static fetchNeighborhoods(callback)` </br>
-`static fetchCuisines(callback)` </br>
+##### `dbhelper.js`: asynchronously load data from restaurants.json using Fetch API. </br>
 ##### `main.js`: a wrapper for dbhelper.js that directly interact with the event listeners in index.html 
 ##### `restaurant_info.js`: a wrapper for dbhelper.js that directly interact with the event listeners in restaurant.html
 ##### `sw.js`: the script that installs, activates service worker, and manipulates cache through cache.put, cache.addALL, cache.match, cache.delete. 
