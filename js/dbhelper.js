@@ -38,6 +38,7 @@ class DBHelper {
   /**
    * Fetch a restaurant by its ID.
    */
+  /*
   static fetchRestaurantById(id, callback) {
     // fetch all restaurants with proper error handling.
     DBHelper.fetchRestaurants((error, restaurants) => {
@@ -53,6 +54,7 @@ class DBHelper {
       }
     });
   }
+  */
 
   /**
    * Fetch restaurants by a cuisine type with proper error handling.
