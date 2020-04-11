@@ -177,6 +177,7 @@ class DBHelper {
   /**
    * Map marker for a restaurant.
    */
+  /*
   static mapMarkerForRestaurant(restaurant, map) {
     // https://leafletjs.com/reference-1.3.0.html#marker  
     const marker = new L.marker([restaurant.latlng.lat, restaurant.latlng.lng],
@@ -187,6 +188,7 @@ class DBHelper {
       marker.addTo(newMap);
     return marker;
   } 
+  */
 }
 
 let isHosted = (window.location.hostname === "shijingl.github.io") ? 'true' : '' ;
