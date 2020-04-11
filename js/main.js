@@ -9,17 +9,15 @@ var markers = []
  */
 document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); 
-  fetchNeighborhoodsTest();
-  // fetchNeighborhoods();
-  fetchCuisinesTest();
-  // fetchCuisines();
+  fetchNeighborhoods();
+  fetchCuisines();
 });
 
 /**
  * Fetch all neighborhoods and set their HTML.
  */
-fetchNeighborhoodsTest = () => {
-  const fetchNeighborhoods = fetch(DBHelperTest.DATABASE_URL_Test)
+fetchNeighborhoods = () => {
+  const fetchNeighborhoods = fetch(DBHelper.DATABASE_URL)
   fetchNeighborhoods.then(response => {
     return response.json();
   }).then(neighborhoods => {
@@ -43,8 +41,8 @@ fillNeighborhoodsHTML = (neighborhoods) => {
 /**
  * Fetch all cuisines and set their HTML.
  */
-fetchCuisinesTest = () => {
-  const fetchCuisines = fetch(DBHelperTest.DATABASE_URL_Test);
+fetchCuisines = () => {
+  const fetchCuisines = fetch(DBHelper.DATABASE_URL);
   fetchCuisines.then(response => {
     return response.json();
   }).then(cuisines => {
@@ -99,7 +97,7 @@ updateRestaurants = () => {
   const cuisine = cSelect[cIndex].value;
   const neighborhood = nSelect[nIndex].value;
 
-  const fetchByCuisinesAndNeighborHood = fetch(DBHelperTest.DATABASE_URL_Test);
+  const fetchByCuisinesAndNeighborHood = fetch(DBHelper.DATABASE_URL);
   fetchByCuisinesAndNeighborHood.then(response => {
     return response.json();
   }).then(cuisines => {
@@ -182,8 +180,7 @@ createRestaurantHTML = (restaurant) => {
 addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
-    // const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
-    const marker = DBHelperTest.mapMarkerForRestaurantTest(restaurant, self.newMap);
+    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
     marker.on("click", onClick);
     function onClick() {
       window.location.href = marker.options.url;

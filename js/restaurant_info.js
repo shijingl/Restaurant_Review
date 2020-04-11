@@ -31,7 +31,7 @@ initMap = () => {
       }).addTo(newMap);
       fillBreadcrumb();
       // DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
-      DBHelperTest.mapMarkerForRestaurantTest(self.restaurant, self.newMap);
+      DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
     }
   });
 }  
@@ -49,7 +49,7 @@ fetchRestaurantFromURL = (callback) => {
     error = 'No restaurant id in URL'
     callback(error, null);
   } else {
-    const fetchRestaurantById = fetch(DBHelperTest.DATABASE_URL_Test)
+    const fetchRestaurantById = fetch(DBHelper.DATABASE_URL)
     fetchRestaurantById.then(response => {
       return response.json();
     }).then(fetchRestaurants => {

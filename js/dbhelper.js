@@ -1,14 +1,14 @@
-class DBHelperTest {
-    static get DATABASE_URL_Test() {
+class DBHelper {
+    static get DATABASE_URL() {
         const port = 8081 // Change this to your server port
     
-        if(isHosted_test){
+        if(isHosted){
           return 'https://shijingl.github.io/Restaurant_Review/data/restaurants.json'
         }
         return `http://localhost:${port}/data/restaurants.json`;
     }
 
-    static mapMarkerForRestaurantTest(restaurant, map) {
+    static mapMarkerForRestaurant(restaurant, map) {
         // https://leafletjs.com/reference-1.3.0.html#marker  
         const marker = new L.marker([restaurant.latlng.lat, restaurant.latlng.lng],
           {title: restaurant.name,
@@ -20,4 +20,4 @@ class DBHelperTest {
     } 
 }
 
-let isHosted_test = (window.location.hostname === "shijingl.github.io") ? 'true' : '' ;
+let isHosted = (window.location.hostname === "shijingl.github.io") ? 'true' : '' ;
